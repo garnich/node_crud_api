@@ -1,0 +1,40 @@
+{
+  "name": "node_crud_api",
+  "version": "1.0.0",
+  "description": "NODE20222Q2 CRUD API task",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "start:prod": "npm run clean && tsc && cross-env PORT=3001 node ./dist/index.js",
+    "start:dev": "npx ts-node index.ts",
+    "prettier": "prettier --config .prettierrc ./**/*.{ts,tsx,js,json} --write",
+    "lint": "eslint . --ext .ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/garnich/node_crud_api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/garnich/node_crud_api/issues"
+  },
+  "homepage": "https://github.com/garnich/node_crud_api#readme",
+  "dependencies": {
+    "dotenv": "^16.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.43",
+    "@typescript-eslint/eslint-plugin": "^5.28.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.17.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "nodemon": "^2.0.16",
+    "prettier": "^2.7.0",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.3",
+    "uuid": "^8.3.2"
+  }
+}
