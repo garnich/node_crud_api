@@ -105,7 +105,7 @@ export const server = createServer(async (request, response) => {
             response.end();
           } else {
             response.writeHead(400, { 'Content-Type': 'application/json' });
-            response.write('Sorry! Data is invalid. Note: username(sting), age(number), hobbies([] or [] of strings) are REQUIRED!)');
+            response.write(JSON.stringify('Sorry! Data is invalid. Note: username(sting), age(number), hobbies([] or [] of strings) are REQUIRED!)'));
             response.end();
           }
       });
@@ -118,7 +118,7 @@ export const server = createServer(async (request, response) => {
   catch (error) {
     if(error) {
       response.writeHead(500, { 'Content-Type': 'application/json' });
-      response.write('Sorry! Something went wrong on our side.');
+      response.write(JSON.stringify('Sorry! Something went wrong on our side.'));
       response.end();
     }
   }

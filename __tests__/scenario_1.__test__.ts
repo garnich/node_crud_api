@@ -20,7 +20,7 @@ describe('Scenario #1 endpoints work properly', () => {
         expect(isValidUUID(response.body.id)).toBeTruthy();
     });
 
-    it('tests POST method api/users/{userId} endpoint', async() => {
+    it('tests GET method api/users/{userId} endpoint', async() => {
         const postResponse = await request(server).post("/api/users").send({username: 'Jhon', age: 21, hobbies: ['running']});
 
         const id = postResponse.body.id;
