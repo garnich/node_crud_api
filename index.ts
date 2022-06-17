@@ -10,7 +10,7 @@ config();
 
 const PORT = env.PORT || 3000;
 
-const server = createServer(async (request, response) => {
+export const server = createServer(async (request, response) => {
   try{
     const urlArr = request.url?.split('/');
 
@@ -18,7 +18,7 @@ const server = createServer(async (request, response) => {
       const id = urlArr.pop();
       if(id && !isValidUUID(id)) {
         response.writeHead(400, { 'Content-Type': 'application/json' });
-        response.write('Request contain INVALID id');
+        response.write(JSON.stringify('Request contain INVALID id'));
         response.end();
       } else if (id && request.method === 'GET') {
         const user = await Storage.apiGetUserById(id).then((user: IUser | undefined) => user);
@@ -29,7 +29,7 @@ const server = createServer(async (request, response) => {
           response.end();
         } else {
           response.writeHead(404, { 'Content-Type': 'application/json' });
-          response.write(`Can't find user with id: ${id}`);
+          response.write(JSON.stringify(`Can't find user with id: ${id}`));
           response.end();
         }
       } else if(id && request.method === 'PUT') {
@@ -55,7 +55,7 @@ const server = createServer(async (request, response) => {
               response.end();
             } else {
               response.writeHead(404, { 'Content-Type': 'application/json' });
-              response.write(`Can't find user with id: ${id}`);
+              response.write(JSON.stringify(`Can't find user with id: ${id}`));
               response.end();
             }
         });
@@ -64,11 +64,11 @@ const server = createServer(async (request, response) => {
 
         if(users) {
           response.writeHead(200, { 'Content-Type': 'application/json' });
-          response.write(`Successfully finded and deleted user with id: ${id}`);
+          response.write(JSON.stringify(`Successfully finded and deleted user with id: ${id}`));
           response.end();
         } else {
           response.writeHead(404, { 'Content-Type': 'application/json' });
-          response.write(`Can't find and delete user with id: ${id}`);
+          response.write(JSON.stringify(`Can't find and delete user with id: ${id}`));
           response.end();
         }
       }
