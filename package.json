@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf dist",
-    "start:prod": "npm run clean && tsc && cross-env PORT=3001 node ./dist/index.js",
+    "start:prod": "npm run clean && tsc && cross-env PORT=3000 node ./dist/index.js",
     "start:dev_ts": "npm run clean && tsc -w",
     "start:dev_node": "cross-env PORT=3001 nodemon ./dist/index.js",
     "prettier": "prettier --config .prettierrc ./**/*.{ts,tsx,js,json} --write",
