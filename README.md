@@ -12,6 +12,9 @@ NODEJS2022Q2
 ### For starting application in PROD mode please use the folowing command:
 - **npm run start:prod** => this command will updated build in dist folder and start application on the PORT 3001 (remove `cross-env PORT=3001` from this script to run application on PORT 5000 (sotred in .env file))
 
+### For starting application in MULTI mode please use the folowing command:
+- **npm run start:multi** => start numbers of server instances equal CPUs number on PORT 5000 (sotred in .env file).
+
 ### To run tests use **npm run test**
 
 ### Application functionality tested in POSTMAN using:

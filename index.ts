@@ -125,5 +125,5 @@ export const server = createServer(async (request, response) => {
 });
 
 server.listen(PORT, () => {
-  console.log(`server started on port: ${PORT}`);
+  console.log(`Server started on port: ${PORT}`);
 });

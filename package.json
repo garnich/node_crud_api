@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf dist",
+    "start:multi": "npm run clean && tsc && node ./dist/multiServer.js",
     "start:prod": "npm run clean && tsc && cross-env PORT=3001 node ./dist/index.js",
     "start:dev_ts": "npm run clean && tsc -w",
     "start:dev_node": "nodemon ./dist/index.js",
