@@ -1,0 +1,50 @@
+{
+  "name": "node_crud_api",
+  "version": "1.0.0",
+  "description": "NODE20222Q2 CRUD API task",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "start:multi": "npm run clean && tsc && node ./dist/multiServer.js",
+    "start:prod": "npm run clean && tsc && cross-env PORT=3001 node ./dist/index.js",
+    "start:dev_ts": "npm run clean && tsc -w",
+    "start:dev_node": "nodemon ./dist/index.js",
+    "prettier": "prettier --config .prettierrc ./**/*.{ts,tsx,js,json} --write",
+    "lint": "eslint . --ext .ts",
+    "test": "jest --detectOpenHandles",
+    "test:watch": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/garnich/node_crud_api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/garnich/node_crud_api/issues"
+  },
+  "homepage": "https://github.com/garnich/node_crud_api#readme",
+  "dependencies": {
+    "dotenv": "^16.0.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^28.1.1",
+    "@types/node": "^17.0.43",
+    "@types/supertest": "^2.0.12",
+    "@types/uuid": "^8.3.4",
+    "@typescript-eslint/eslint-plugin": "^5.28.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.17.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^28.1.1",
+    "nodemon": "^2.0.16",
+    "prettier": "^2.7.0",
+    "supertest": "^6.2.3",
+    "ts-jest": "^28.0.5",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.3",
+    "uuid": "^8.3.2"
+  }
+}
