@@ -7,11 +7,10 @@ NODEJS2022Q2
 ### For starting application in DEV mode please use the folowing commands (NOTE: follow two commands should be starting in separate console each!!!):
 
 - **npm run start:dev_ts** => start TSC compiller in watch mode
-- **npm run start:dev_node** => start nodemon on the PORT 3001 
+- **npm run start:dev_node** => start nodemon on the PORT 5000 (sotred in .env file)
 
 ### For starting application in PROD mode please use the folowing command:
-- **npm run start:prod** => this command will updated build in dist folder and start application on the PORT 3000
-
+- **npm run start:prod** => this command will updated build in dist folder and start application on the PORT 3001 (remove `cross-env PORT=3001` from this script to run application on PORT 5000 (sotred in .env file))
 
 ### To run tests use **npm run test**
 
